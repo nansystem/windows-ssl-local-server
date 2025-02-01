@@ -38,7 +38,7 @@ project-root/
         └── (Expressアプリケーションファイル)
 ```
 
-## backendの起動
+## 起動
 
 ``` sh
 docker-compose up --build

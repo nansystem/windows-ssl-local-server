@@ -1,15 +1,20 @@
 services:
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
+      - backend
+
   frontend:
     build: ./frontend
-    ports:
-      - "3000:3000"
     environment:
       - PORT=3000
+      - API_BASE_URL=http://dev-api.xxx.jp
 
   backend:
     build: ./backend
-    ports:
-      - "3001:3001"
     environment:
       - PORT=3001
 

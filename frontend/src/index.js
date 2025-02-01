@@ -10,9 +10,11 @@ app.get("/", (req, res) => {
     <div id="result"></div>
 
     <script>
+      const API_URL = '${process.env.API_BASE_URL}/api/users';
+
       async function fetchUsers() {
         try {
-          const response = await fetch('http://localhost:3001/api/users');
+          const response = await fetch(API_URL);
           const data = await response.json();
           document.getElementById('result').innerHTML = 
             '<pre>' + JSON.stringify(data, null, 2) + '</pre>';

@@ -5,16 +5,6 @@ const port = process.env.PORT || 3001;
 // JSONボディパーサーの追加
 app.use(express.json());
 
-// CORSの設定（開発環境用）
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
-
 app.get("/api", (req, res) => {
   res.json({ message: "APIサーバーへようこそ！" });
 });
